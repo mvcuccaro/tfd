@@ -5,7 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/people.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/js/people.js"></script>
 	<title>tfd</title>
 </head>
 <body class="bg-grey">
