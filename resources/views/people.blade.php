@@ -7,8 +7,6 @@
 	<script type="text/javascript" src="/js/people.js"></script>
 	<script type="text/javascript">
 		var people 					= JSON.parse('{!! $people !!}');
-		var default_sort_column 	= 'last_name';
-		var default_sort_direciton	= 'DESC';
 	</script>
 	<title>tfd</title>
 </head>
@@ -21,9 +19,15 @@
 				</div>
 				<div id="table_container">
 					<div class="row" id="table_header">
-						<div class="col-sm-4 bg-info sortable_column" id="first_name">First Name</div>
-						<div class="col-sm-4 bg-info sortable_column" id="last_name">Last Name</div>
-						<div class="col-sm-4 bg-info sortable_column" id="favorite_color">Favorite color</div>
+						<div class="col-sm-4 bg-info sortable_column" id="first_name">
+							First Name <span id="first_name_direction" class="sort_arrow"></span>
+						</div>
+						<div class="col-sm-4 bg-info sortable_column" id="last_name">
+							Last Name <span id="last_name_direction" class="sort_arrow"></span>
+						</div>
+						<div class="col-sm-4 bg-info sortable_column" id="favorite_color">
+							Favorite color <span id="favorite_color_direction" class="sort_arrow"></span>
+						</div>
 					</div>
 				</div>
 			</div>

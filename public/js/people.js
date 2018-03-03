@@ -6,14 +6,11 @@ var active_sort_direction 	= default_sort_direction;
 
 $(function(){
 	//do an initial sort at load
-	sortPeopleByColumn({
-		column: default_sort_column
-	});
+	sortPeopleByColumn({column: default_sort_column}, 0);
+
 
 	$('.sortable_column').on('click', function(event){
-		sortPeopleByColumn({
-			column:event.currentTarget.id
-		});
+		sortPeopleByColumn({column:event.currentTarget.id}, 1);
 	});
 });
 
@@ -22,22 +19,28 @@ $(function(){
  * @param  {object} arg_sort_info sort info ex. column name
  * @return {bool}             return true for funzies
  */
-function sortPeopleByColumn(arg_sort_info){
+function sortPeopleByColumn(arg_sort_info, arg_toggle_direction){
 	var column 				= arg_sort_info.column;
 
 	//if the column is the same - reverse the direction
-	if( active_sort_column == column ){
+	if( active_sort_column == column && arg_toggle_direction ){
 		toggleDirection();
 	}
 
+	console.log('2');
+
+
 	//set active sort to this justly right now clicked column
 	active_sort_column		= column;
+
+	setSortArrow();
+	
 	people.sort(function(a, b){
 		if( a[column] < b[column] ){
 			return active_sort_direction == 'DESC' ? 1 : -1;
 		}
 		if( a[column] > b[column] ){
-			return active_sort_direction == 'ASC' ? -1 : 1;
+			return active_sort_direction == 'DESC' ? -1 : 1;
 		}
 		return 0;
 	});
@@ -74,7 +77,16 @@ function updatePeopleTable(){
 }
 
 function toggleDirection(){
-	active_sort_direction == 'DESC' ? 'ASC' : 'DESC'
+	active_sort_direction = active_sort_direction == 'DESC' ? 'ASC' : 'DESC';
+	setSortArrow();
 	console.log(active_sort_direction);
 	return active_sort_direction;
+}
+
+function setSortArrow(arg_column){
+	$('.sort_arrow').html('');
+
+	var selector 	= $('#' + active_sort_column + '_direction');
+	var arrow_code 	= active_sort_direction == 'DESC' ? '&#8595;' : '&#8593;';
+	selector.html(arrow_code);
 }
