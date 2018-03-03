@@ -1,6 +1,7 @@
 # TFD People App
+A simple php project to demonstrate a full stack application
 
-A simple php project to demonstrate a full stack application using:
+using:
 
 - composer for dependencies
 - laravel with blade for server side view rendering
