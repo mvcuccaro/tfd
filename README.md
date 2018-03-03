@@ -39,3 +39,4 @@ The people app provides a table with people data.
 By default the people data is sorted alphabetically by the last name in descending order. 
 You can change the column to sort by clicking on the column header of any column in the table.
 Click any column a second time to reveerse the direction of the sort.
+The arrow to the right of each column name indicates what direction the sort is currently set to.
