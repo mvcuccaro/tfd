@@ -1,0 +1,12 @@
+.sortable_column {
+	padding:6px;
+	background-color:black;
+}
+
+.sortable_column:hover {
+	text-decoration:underline;
+	font-weight:bold!important;
+	cursor:pointer!important;
+}
+
+#table_header

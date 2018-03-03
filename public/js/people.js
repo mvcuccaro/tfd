@@ -26,10 +26,10 @@ function sortPeopleByColumn(arg_sort_info){
 	active_sort_column		= column;
 	people.sort(function(a, b){
 		if( a[column] < b[column] ){
-			return -1;
+			return 1;
 		}
 		if( a[column] > b[column] ){
-			return 1;
+			return -1;
 		}
 		return 0;
 	});
@@ -46,8 +46,10 @@ function sortPeopleByColumn(arg_sort_info){
 function updatePeopleTable(){
 	//remove current data from table:
 	$('#table_container').children(':not(#table_header)').remove();
-	$('.sortable_column').css('font-weight', 'normal').css('color', 'black');
-	$('#' + active_sort_column).css('font-weight', 'bold').css('color', 'yellow');
+	$('.sortable_column')
+		.css('color', 'black');
+	$('#' + active_sort_column)
+		.css('color', 'yellow');
 
 	//append people array to the data container
 	people.forEach(function(obj){
