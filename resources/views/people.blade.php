@@ -16,7 +16,7 @@
 		<div class="row">
 			<div class="col-sm-6 border border-light bg-dark">
 				<div class="row">
-					<div class="col-sm-6 text-center"><h1>TFD Test People</h1></div>
+					<div class="col-sm-12 text-center"><h1>TFD Test People</h1></div>
 				</div>
 				<div id="table_container">
 					<div class="row" id="table_header">
