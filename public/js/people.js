@@ -27,9 +27,6 @@ function sortPeopleByColumn(arg_sort_info, arg_toggle_direction){
 		toggleDirection();
 	}
 
-	console.log('2');
-
-
 	//set active sort to this justly right now clicked column
 	active_sort_column		= column;
 
@@ -79,7 +76,6 @@ function updatePeopleTable(){
 function toggleDirection(){
 	active_sort_direction = active_sort_direction == 'DESC' ? 'ASC' : 'DESC';
 	setSortArrow();
-	console.log(active_sort_direction);
 	return active_sort_direction;
 }
 
