@@ -7,7 +7,6 @@
 	<script type="text/javascript">
 		var people 				= JSON.parse('{!! $people !!}');
 		var default_sort_column = 'last_name';
-		console.log(people);
 	</script>
 	<title>tfd</title>
 </head>

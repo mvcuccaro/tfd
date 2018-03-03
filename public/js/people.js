@@ -33,6 +33,10 @@ function sortPeopleByColumn(arg_sort_info){
 	return true;
 }
 
+/**
+ * remove data from container and repopulate
+ * @return {[type]} [description]
+ */
 function updatePeopleTable(){
 	//remove current data from table:
 	$('#table_container').children(':not(#table_header)').remove();
