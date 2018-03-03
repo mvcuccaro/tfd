@@ -6,9 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="/css/people.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="/js/people.js"></script>
-	<script type="text/javascript">
-		var people 					= JSON.parse('{!! $people !!}');
-	</script>
 	<title>tfd</title>
 </head>
 <body class="bg-grey">

@@ -1,4 +1,4 @@
-<!-- the people view -->
+<!-- the error view -->
 @extends('layouts.tfd')
 @section('content')
 <div class="container-fluid">
