@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,7 +24,12 @@ Route::get('/', function () {
  */
 Route::get('/tfd/people/{sort?}', function($sort = 'lname'){
 	//init static people - assuming this is coming from an http requset providing json payloads
-	$people_data = '[{"first_name":"Michael","last_name":"Cuccaro","favorite_color":"red"},{"first_name":"Tiffany","last_name":"Wells","favorite_color":"green"},{"first_name":"Teddy","last_name":"Bear","favorite_color":"crimson"},{"first_name":"Muffin","last_name":"Poo","favorite_color":"treats"}]';
+	$people_data 	= '[{"first_name":"Michael","last_name":"Cuccaro","favorite_color":"red"},{"first_name":"Tiffany","last_name":"Wells","favorite_color":"green"},{"first_name":"Teddy","last_name":"Bear","favorite_color":"crimson"},{"first_name":"Muffin","last_name":"Poo","favorite_color":"treats"}]';
+
+	$url			= 'http://127.0.0.1:8240/data/people_data.json';
+	$http	 		= new Client();
+	$response 		= $http->get($url);
+	//error_log($response);
 
 	//return view
 	return view('people', [
