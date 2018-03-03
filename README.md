@@ -1,4 +1,4 @@
-# README tfd
+# TFD People App
 
 A simple php project to demonstrate a full stack application using:
 
