@@ -14,6 +14,8 @@ A simple php project to demonstrate a full stack application using:
 - [Usage](#usage)
 
 ## Installation
+This application was created with php7.027, composer 1.6.3 and laravel 5.5.
+These are the minimum supported requirements.
 
 Clone to your project directory and install dependencies with composer
 
