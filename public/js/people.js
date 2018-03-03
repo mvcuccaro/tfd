@@ -1,7 +1,10 @@
-default_sort_column = null;
+var default_sort_column  		= 'last_name';
+var default_sort_direction		= 'DESC';
+
+var active_sort_column 		= default_sort_column;
+var active_sort_direction 	= default_sort_direction;
 
 $(function(){
-	var active_sort_column = default_sort_column;
 	//do an initial sort at load
 	sortPeopleByColumn({
 		column: default_sort_column
@@ -22,14 +25,19 @@ $(function(){
 function sortPeopleByColumn(arg_sort_info){
 	var column 				= arg_sort_info.column;
 
+	//if the column is the same - reverse the direction
+	if( active_sort_column == column ){
+		toggleDirection();
+	}
+
 	//set active sort to this justly right now clicked column
 	active_sort_column		= column;
 	people.sort(function(a, b){
 		if( a[column] < b[column] ){
-			return 1;
+			return active_sort_direction == 'DESC' ? 1 : -1;
 		}
 		if( a[column] > b[column] ){
-			return -1;
+			return active_sort_direction == 'ASC' ? -1 : 1;
 		}
 		return 0;
 	});
@@ -63,4 +71,10 @@ function updatePeopleTable(){
 	});
 
 	return true;
+}
+
+function toggleDirection(){
+	active_sort_direction == 'DESC' ? 'ASC' : 'DESC'
+	console.log(active_sort_direction);
+	return active_sort_direction;
 }
