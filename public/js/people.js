@@ -1,4 +1,7 @@
+default_sort_column = null;
+
 $(function(){
+	var active_sort_column = default_sort_column;
 	//do an initial sort at load
 	sortPeopleByColumn({
 		column: default_sort_column
@@ -13,11 +16,14 @@ $(function(){
 
 /**
  * Sort 
- * @param  {[type]} arg_sort_info [description]
- * @return {[type]}               [description]
+ * @param  {object} arg_sort_info sort info ex. column name
+ * @return {bool}             return true for funzies
  */
 function sortPeopleByColumn(arg_sort_info){
-	var column = arg_sort_info.column
+	var column 				= arg_sort_info.column;
+
+	//set active sort to this justly right now clicked column
+	active_sort_column		= column;
 	people.sort(function(a, b){
 		if( a[column] < b[column] ){
 			return -1;
@@ -35,11 +41,13 @@ function sortPeopleByColumn(arg_sort_info){
 
 /**
  * remove data from container and repopulate
- * @return {[type]} [description]
+ * @return {bool} return true for funzies
  */
 function updatePeopleTable(){
 	//remove current data from table:
 	$('#table_container').children(':not(#table_header)').remove();
+	$('.sortable_column').css('font-weight', 'normal').css('color', 'black');
+	$('#' + active_sort_column).css('font-weight', 'bold').css('color', 'yellow');
 
 	//append people array to the data container
 	people.forEach(function(obj){
@@ -51,4 +59,6 @@ function updatePeopleTable(){
 
 		$('#table_container').append(row);
 	});
+
+	return true;
 }
