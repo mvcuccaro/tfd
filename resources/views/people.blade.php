@@ -1,5 +1,5 @@
+<!-- the people view -->
 @extends('layouts.tfd')
-
 @section('content')
 <script type="text/javascript">
 	var people 					= JSON.parse('{!! $people !!}');

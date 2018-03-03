@@ -1,3 +1,4 @@
+<!-- The master template -->
 <!DOCTYPE html>
 <html>
 <head>
