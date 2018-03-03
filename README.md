@@ -35,6 +35,8 @@ php artisan serve --host 0.0.0.0 --port 8000
 When your server has started visit http://localhost:8000 in your browser (currently only tested on latest version of chrome)
 A page will be displayed with a "Start People App" link. Click it to start the people app =]
 
+![alt text](https://github.com/mvcuccaro/tfd/blob/master/public/images/screenshot.png)
+
 The people app provides a table with people data.  
 By default the people data is sorted alphabetically by the last name in descending order. 
 You can change the column to sort by clicking on the column header of any column in the table.
