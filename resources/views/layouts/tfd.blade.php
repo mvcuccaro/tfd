@@ -13,7 +13,7 @@
 	</div>
 	@yield('content')
 	<div id="#footer">
-		All pretend rights reserved
+		Provided by Michael Cuccaro - All pretend rights reserved
 	</div>
 </body>
 </html>
