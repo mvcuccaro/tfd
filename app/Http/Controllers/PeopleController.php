@@ -22,7 +22,7 @@ class PeopleController extends Controller
 		//$people_data 	= '[{"first_name":"Michael","last_name":"Cuccaro","favorite_color":"red"},{"first_name":"Tiffany","last_name":"Wells","favorite_color":"green"},{"first_name":"Teddy","last_name":"Bear","favorite_color":"crimson"},{"first_name":"Muffin","last_name":"Poo","favorite_color":"treats"}]';
 
 		//the location of the people data
-		$url			= 'https://raw.githubusercontent.com/mvcuccaro/tfd/issue3/public/data/people_data.json';
+		$url			= 'https://raw.githubusercontent.com/mvcuccaro/tfd/master/public/data/people_data.json';
 
 		try { 
 			$http	 		= new Client();
